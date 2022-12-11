@@ -28,9 +28,6 @@ def get_calc(a, b, c):
         window1, window2, window3 = str("0"), str("0"), str("0")
         return {"window1": window1, "window2": window2, "window3": window3}
 
-1
-1
-1
 
 class Container(BoxLayout):
 
