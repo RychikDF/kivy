@@ -1,0 +1,95 @@
+
+
+<Container>
+    rows:3
+    orientation: "vertical"
+
+    text_input_a1: text_input_a1
+    text_input_a2: text_input_a2
+    text_input_a3: text_input_a3
+
+    text_input_b1: text_input_b1
+    text_input_b2: text_input_b2
+    text_input_b3: text_input_b3
+
+    text_input_c1: text_input_c1
+    text_input_c2: text_input_c2
+    text_input_c3: text_input_c3
+
+    window1: window1
+    window2: window2
+    window3: window3
+
+    BoxLayout:
+        size_hint: 1, .15
+        Label:
+            id: window1
+            text: "мм"
+
+        Label:
+            id: window2
+            text: "шт."
+
+        Label:
+            id: window3
+            text: "шт."
+
+
+    ScrollView:
+        GridLayout:
+            cols: 1
+            size_hint_y: 1.1
+
+            BoxLayout:
+                size_hint: 1, None
+                height: "50sp"
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_a1
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_b1
+                TextInput:
+                    hint_text: "шт."
+                    id: text_input_c1
+
+            BoxLayout:
+                size_hint: 1, None
+                height: "50sp"
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_a2
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_b2
+                TextInput:
+                    hint_text: "шт."
+                    id: text_input_c2
+
+            BoxLayout:
+                size_hint: 1, None
+                height: "50sp"
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_a3
+                TextInput:
+                    hint_text: "мм"
+                    id: text_input_b3
+                TextInput:
+                    hint_text: "шт."
+                    id: text_input_c3
+
+
+    BoxLayout:
+        size_hint: 1, .15
+        Button:
+
+            text: "GO!"
+            on_release:
+                root.sbor()
+
+        Button:
+
+            text: "Clear"
+            on_release:
+                root.Clear()
