@@ -1,4 +1,14 @@
+<Win_BoxLayout@BoxLayout>
+    size_hint: 1, None
+    height: "70sp"
+    padding: 5, 0, 5, 0
 
+
+<Win_TextInput@TextInput>
+    padding: 0, "16sp", 0, 0  #Не правильное решение. низкого уровня
+    multiline: False
+    halign: 'center'
+    font_size: "25sp"
 
 <Container>
     rows:3
@@ -42,167 +52,147 @@
     window_l3: window_l3
 
     BoxLayout:
-        size_hint: 1, .16
+        size_hint: 1, .15
         Label:
+            font_size: "25sp"
             id: window_l1
             text: "мм"
 
         Label:
+            font_size: "25sp"
             id: window_l2
             text: "шт."
 
         Label:
+            font_size: "25sp"
             id: window_l3
             text: "шт."
-
 
     ScrollView:
         GridLayout:
             cols: 1
             size_hint_y: 1.1
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a1
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b1
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c1
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a2
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b2
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c2
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a3
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b3
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c3
 
-
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a4
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b4
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c4
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a5
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b5
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c5
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a6
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b6
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c6
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a7
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b7
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c7
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a8
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b8
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c8
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a9
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b9
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c9
 
-            BoxLayout:
-                size_hint: 1, None
-                height: "50sp"
-                TextInput:
+            Win_BoxLayout:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_a10
-                TextInput:
+                Win_TextInput:
                     hint_text: "мм"
                     id: text_input_b10
-                TextInput:
+                Win_TextInput:
                     hint_text: "шт."
                     id: text_input_c10
-
 
     BoxLayout:
         size_hint: 1, .15
         Button:
-
+            font_size: "25sp"
             text: "GO!"
             on_release:
                 root.sbor()
 
         Button:
-
+            font_size: "25sp"
             text: "Clear"
             on_release:
                 root.Clear()
