@@ -4,34 +4,31 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 
 
-def get_calc(a, b, c):
+def get_calc(a, b, c):  # обработка результата
     if a > 1 and b > 1 and c >= 1:
         window1 = str(((a*2) + (b*2)) * c)
         window2 = str(c * 4)
         window3 = str((c * 4) * 2)
-        return {"window1": window1, "window2": window2, "window3": window3}
 
     elif a > 1 and b > 1 and c < 1:
         window1 = str((a * 2) + (b * 2))
         window2, window3 = str("0"), str("0")
-        return {"window1": window1, "window2": window2, "window3": window3}
 
     elif a < 1 and b < 1 and c < 1:
         window1, window2, window3 = str("0"), str("0"), str("0")
-        return {"window1": window1, "window2": window2, "window3": window3}
 
     elif a < 1 or b < 1 and c >= 1:
         window1, window2, window3 = str("0"), str("0"), str("0")
-        return {"window1": window1, "window2": window2, "window3": window3}
 
     elif a < 1 or b < 1 and c < 1:
         window1, window2, window3 = str("0"), str("0"), str("0")
-        return {"window1": window1, "window2": window2, "window3": window3}
+
+    return {"window1": window1, "window2": window2, "window3": window3}
 
 
 class Container(BoxLayout):
 
-    def sbor(self):
+    def sbor(self): #Сбор и отправка данных
         try:
             txa1 = int(self.text_input_a1.text)
         except:
@@ -87,7 +84,7 @@ class Container(BoxLayout):
         self.window2.text = sbor_win.get("window2") + " шт."
         self.window3.text = sbor_win.get("window3") + " шт."
 
-    def Clear(self):
+    def Clear(self): # Замена символов в полях
         self.window1.text = "мм"
         self.window2.text = "шт."
         self.window3.text = "шт."
