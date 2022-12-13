@@ -135,14 +135,14 @@ class Container(BoxLayout):
               window_c_6 + window_c_7 + window_c_8 + window_c_9 + window_c_10
 
         sbor_win = get_calc(tx1,tx2,tx3)
-        self.window1.text = sbor_win.get("window1") + " мм"
-        self.window2.text = sbor_win.get("window2") + " шт."
-        self.window3.text = sbor_win.get("window3") + " шт."
+        self.window_l1.text = sbor_win.get("window1") + " мм"
+        self.window_l2.text = sbor_win.get("window2") + " шт."
+        self.window_l3.text = sbor_win.get("window3") + " шт."
 
     def Clear(self): # Замена символов в полях
-        self.window1.text = "мм"
-        self.window2.text = "шт."
-        self.window3.text = "шт."
+        self.window_l1.text = "мм"
+        self.window_l2.text = "шт."
+        self.window_l3.text = "шт."
 
         self.text_input_a1.text = ""
         self.text_input_a2.text = ""
