@@ -31,54 +31,28 @@ class Container(BoxLayout):
     def sbor(self): #Сбор и отправка данных
 
 
-        try:
-            txa1 = int(self.text_input_a1.text)
-        except:
-            txa1 = 0
-
-        try:
-            txb1 = int(self.text_input_b1.text)
-        except:
-            txb1 = 0
-
-        try:
-            txc1 = int(self.text_input_c1.text)
-        except:
-            txc1 = 0
+        try: txa1 = int(self.text_input_a1.text)
+        except ValueError: txa1 = 0
+        try: txb1 = int(self.text_input_b1.text)
+        except ValueError: txb1 = 0
+        try: txc1 = int(self.text_input_c1.text)
+        except ValueError: txc1 = 0
 
 
-
-        try:
-            txa2 = int(self.text_input_a2.text)
-        except:
-            txa2 = 0
-
-        try:
-            txb2 = int(self.text_input_b2.text)
-        except:
-            txb2 = 0
-
-        try:
-            txc2 = int(self.text_input_c2.text)
-        except:
-            txc2 = 0
+        try: txa2 = int(self.text_input_a2.text)
+        except ValueError: txa2 = 0
+        try: txb2 = int(self.text_input_b2.text)
+        except ValueError: txb2 = 0
+        try: txc2 = int(self.text_input_c2.text)
+        except ValueError: txc2 = 0
 
 
-
-        try:
-            txa3 = int(self.text_input_a3.text)
-        except:
-            txa3 = 0
-
-        try:
-            txb3 = int(self.text_input_b3.text)
-        except:
-            txb3 = 0
-
-        try:
-            txc3 = int(self.text_input_c3.text)
-        except:
-            txc3 = 0
+        try: txa3 = int(self.text_input_a3.text)
+        except ValueError: txa3 = 0
+        try: txb3 = int(self.text_input_b3.text)
+        except ValueError: txb3 = 0
+        try: txc3 = int(self.text_input_c3.text)
+        except ValueError: txc3 = 0
 
 
         # Проверка отсутсвия цыфр в соседней колонке для вычета их
@@ -86,10 +60,8 @@ class Container(BoxLayout):
 
         if (txa1 <= 0 and txb1 > 0) or (txa1 > 0 and txb1 <= 0):
             txa1, txb1 = 0, 0
-
         if (txa2 <= 0 and txb2 > 0) or (txa1 > 0 and txb2 <= 0):
             txa2, txb2 = 0, 0
-
         if (txa3 <= 0 and txb3 > 0) or (txa3 > 0 and txb3 <= 0):
             txa3, txb3 = 0, 0
 
