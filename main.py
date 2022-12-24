@@ -3,17 +3,16 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.core.window import Window
-
+import locale
 #Window.size = (720, 1280) # Примерный экран смартфона
 Window.size = (480, 853)
-
+locale.setlocale(locale.LC_ALL, '')
 
 def get_calc(a, b, c):  # обработка результата
     if a > 1 and b > 1 and c >= 1:
         window1 = str(((a*2) + (b*2)) * c)
         window2 = str(c * 4)
         window3 = str((c * 4) * 2)
-
     elif a > 1 and b > 1 and c < 1:
         window1 = str((a * 2) + (b * 2))
         window2, window3 = str("0"), str("0")
@@ -27,7 +26,12 @@ def get_calc(a, b, c):  # обработка результата
     elif a < 1 or b < 1 and c < 1:
         window1, window2, window3 = str("0"), str("0"), str("0")
 
-    return {"window1": window1, "window2": window2, "window3": window3}
+
+    """Разделитель текста, 1 234 567 890 """
+    window1_a = locale.format_string('%d', int(window1), grouping=True)
+
+
+    return {"window1": window1_a, "window2": window2, "window3": window3}
 
 
 class Container(BoxLayout):
@@ -137,6 +141,8 @@ class Container(BoxLayout):
               window_b_6 + window_b_7 + window_b_8 + window_b_9 + window_b_10
         tx3 = window_c_1 + window_c_2 + window_c_3 + window_c_4 + window_c_5 + \
               window_c_6 + window_c_7 + window_c_8 + window_c_9 + window_c_10
+
+
 
         sbor_win = get_calc(tx1,tx2,tx3)
         self.window_l1.text = sbor_win.get("window1") + " мм"
