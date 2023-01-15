@@ -27,11 +27,6 @@ def get_calc(a, b, c):  # обработка результата
     elif a < 1 or b < 1 and c < 1:
         window1, window2, window3 = (0), (0), (0)
 
-
-    """Разделитель текста, 1 234 567 890 """
-    window1 = locale.format_string('%d', int(window1), grouping=True)
-
-
     return {"window1": window1, "window2": window2, "window3": window3}
 
 
@@ -166,7 +161,12 @@ class Container(BoxLayout):
         print(sbor_win)
 
          #выводим на экран
-        self.window_l1.text = str(sbor_win.get("window1")) + " мм"
+
+        """Разделитель текста, 1 234 567 890 """
+        wind = locale.format_string('%d', sbor_win.get("window1"), grouping=True)
+
+
+        self.window_l1.text = str(wind) + " мм"
         self.window_l2.text = str(sbor_win.get("window2")) + " ш.т."
         self.window_l3.text = str(sbor_win.get("window3")) + " ш.т."
 
